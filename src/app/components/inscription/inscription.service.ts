@@ -28,6 +28,10 @@ export class InscriptionService {
       }));
   }
 
+  getInscriptionByStudentId(id: number): Observable<Inscription[]> {
+    return this.http.get<Inscription[]>(`${this.API}/inscribir?student=${id}`);
+  }
+
   putInscription(inscription: Inscription): Observable<Inscription> {
     return this.http.put<Inscription>(`${this.API}/inscribir/${inscription.id}`, inscription);
   }

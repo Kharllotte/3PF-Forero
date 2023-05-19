@@ -14,16 +14,10 @@ export class CoursesService {
 
   getListCourse(): Observable<Course[]>{
     return this.http.get<Course[]>(`${this.API}/courses`)
-    .pipe(map((response: Course[]) => {
-      return response;
-    }))
   }
 
   getCourseId(id: number): Observable<Course> {
     return this.http.get<Course>(`${this.API}/courses/${id}`)
-      .pipe(map((response: Course) => {
-        return response;
-      }));
   }
 
   putCourse(course: Course): Observable<Course> {
