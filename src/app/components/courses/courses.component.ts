@@ -5,8 +5,8 @@ import { CoursesService } from './courses.service';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { ActionsEnum } from 'src/app/utils/enums/enums-global';
-import { DialogStudentViewComponent } from '../students/dialog-student-view/dialog-student-view.component';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogCourseViewComponent } from './dialog-course-view/dialog-course-view.component';
 
 @Component({
   selector: 'app-courses',
@@ -55,7 +55,7 @@ export class CoursesComponent implements OnInit {
   }
 
   popup(course: Course) {
-    this.dialog.open(DialogStudentViewComponent, {
+    this.dialog.open(DialogCourseViewComponent, {
       data: {
         course
       },
