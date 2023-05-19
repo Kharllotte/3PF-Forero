@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "courseName": "Matematicas",
+      "credits": 3,
+      "teachersName": "Andrea"
+    },
+    {
+      "id": 2,
+      "courseName": "Ingles",
+      "credits": 2,
+      "teachersName": "Jorge"
+    },
+    {
+      "id": 3,
+      "courseName": "Programacion",
+      "credits": 3,
+      "teachersName": "Gonzalo"
+    }
+  ]
+  

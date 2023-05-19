@@ -1,0 +1,58 @@
+<div class="container" *ngIf="student && action == 'edit'">
+
+    <h2><strong>Editar</strong></h2>
+
+    <div class="container__button">
+        <button mat-raised-button (click)="back()">Volver</button>
+        <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+    </div>
+
+    <form class="container__form example-form" [formGroup]="form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput disabled placeholder="Id" [value]="student.id">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" placeholder="Nombre" formControlName="firstName" required>
+            <!-- <mat-error *ngIf="false"></mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input type="text" matInput placeholder="Apellido" formControlName="lastName" required>
+            <!-- <mat-error *ngIf="false"></mat-error> -->
+        </mat-form-field>
+
+    </form>
+
+</div>
+
+<div class="container" *ngIf="action != 'edit'">
+
+    <h2><strong>Crear</strong></h2>
+
+    <div class="container__button">
+        <button mat-raised-button (click)="back()">Volver</button>
+        <button mat-raised-button color="primary" (click)="create()">Guardar</button>
+    </div>
+
+    <form *ngIf="form" class="container__form example-form" [formGroup]="form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" placeholder="Nombre" formControlName="firstName" required>
+            <!-- <mat-error *ngIf="false"></mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input type="text" matInput placeholder="Apellido" formControlName="lastName" required>
+            <!-- <mat-error *ngIf="false"></mat-error> -->
+        </mat-form-field>
+
+    </form>
+
+</div>

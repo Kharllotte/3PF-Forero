@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+
+.container {
+  margin: 2rem 2rem 0rem 2rem;
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 1rem;
+  }
+}

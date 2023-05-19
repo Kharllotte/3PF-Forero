@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Inscribir</h2>
+
+
+    <div class="container__button">
+        <button mat-raised-button color="primary" (click)="create()">Inscribir</button>
+    </div>
+
+    <form class="container__form example-form" [formGroup]="form">
+
+        <mat-form-field>
+            <mat-label>Estudiantes</mat-label>
+            <mat-select formControlName="student">
+                <mat-option [value]="item.id" *ngFor="let item of listStudent">{{item.firstName}} {{
+                    item.lastName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Cursos</mat-label>
+            <mat-select formControlName="course">
+                <mat-option [value]="item.id" *ngFor="let item of listCourses">{{item.courseName}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+
+    </form>
+
+</div>
