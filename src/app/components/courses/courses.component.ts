@@ -5,6 +5,8 @@ import { CoursesService } from './courses.service';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { ActionsEnum } from 'src/app/utils/enums/enums-global';
+import { DialogStudentViewComponent } from '../students/dialog-student-view/dialog-student-view.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-courses',
@@ -18,13 +20,14 @@ export class CoursesComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
   listCourse: Course[] = [];
   
-  constructor(private coursesService: CoursesService, private router: Router) { }
+  constructor(private coursesService: CoursesService, private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getListCourses();
@@ -49,6 +52,14 @@ export class CoursesComponent implements OnInit {
     this.coursesService.deleteCourse(id).subscribe(() => {
       this.getListCourses();
     })
+  }
+
+  popup(course: Course) {
+    this.dialog.open(DialogStudentViewComponent, {
+      data: {
+        course
+      },
+    });
   }
 
 }
